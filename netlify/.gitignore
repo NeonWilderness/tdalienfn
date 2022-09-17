@@ -1,8 +1,0 @@
-.env
-.idea
-.netlify
-.prettierrc.json
-.vscode
-*.log
-todo.md
-node_modules

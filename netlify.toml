@@ -3,3 +3,4 @@
 
 [dev]
   framework = "#static"
+  publish = "dist"

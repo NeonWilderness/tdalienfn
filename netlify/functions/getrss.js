@@ -25,7 +25,9 @@ exports.handler = async (event, context) => {
     if (!alias) throw new Error('Missing alias');
     const appUsers = process.env.APPUSER.split('|');
 
-    const approved = ref.match(/https?:\/\/(.*)\.twoday\.net\/?/) || appUsers.includes(alias);
+    const prod = ref.match(/https?:\/\/.*\.twoday\.net\/?/);
+    const dev = ref.match(/https?:\/\/.*\.twoday-test\.click\/?/);
+    const approved = (prod || dev) && appUsers.includes(alias);
     if (!approved) throw new Error('Inappropriate origin/alias');
 
     const url = event.queryStringParameters?.url;

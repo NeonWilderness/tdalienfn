@@ -3,6 +3,8 @@
 .netlify
 .prettierrc.json
 .vscode
+context.json
+event.json
 *.log
 todo.md
 node_modules

@@ -1,0 +1,20 @@
+{
+  "name": "tdalienfn",
+  "version": "1.0.0",
+  "description": "Netlify function to return a parsed RSS from Twoday external blogs",
+  "main": "dist/index.html",
+  "scripts": {
+    "update": "ncu -u && npm i"
+  },
+  "keywords": [
+    "Blog",
+    "Netlify",
+    "RSS",
+    "Twoday"
+  ],
+  "author": "NeonWilderness",
+  "license": "MIT",
+  "dependencies": {
+    "rss-parser": "^3.12.0"
+  }
+}

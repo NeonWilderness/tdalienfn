@@ -17,6 +17,12 @@ const parser = new Parser({
 });
 
 exports.handler = async (event, context) => {
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Accept',
+    'Access-Control-Allow-Methods': 'GET, OPTION'
+  };
+
   try {
     const ref = event.headers.referrer || 'none';
     console.log(`Referrer: ${ref}`);
@@ -36,16 +42,14 @@ exports.handler = async (event, context) => {
     const feed = await parser.parseURL(url);
     return {
       statusCode: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, OPTION'
-      },
+      headers,
       body: JSON.stringify(feed)
     };
   } catch (err) {
     console.log(err);
     return {
       statusCode: 500,
+      headers,
       body: JSON.stringify({ error: `Error while reading RSS feed: ${err}.` })
     };
   }

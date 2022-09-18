@@ -4,3 +4,7 @@
 [dev]
   framework = "#static"
   publish = "dist"
+
+[build]
+  framework = "#static"
+  publish = "dist"

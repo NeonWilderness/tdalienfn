@@ -36,6 +36,10 @@ exports.handler = async (event, context) => {
     const feed = await parser.parseURL(url);
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, OPTION'
+      },
       body: JSON.stringify(feed)
     };
   } catch (err) {

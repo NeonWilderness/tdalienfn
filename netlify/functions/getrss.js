@@ -24,9 +24,8 @@ exports.handler = async (event, context) => {
   };
 
   try {
-    console.log('headers: ', JSON.stringify(event.headers));
-    const ref = event.headers.referrer || 'none';
-    console.log(`Referrer: ${ref}`);
+    const ref = event.headers.referer || 'none';
+    console.log(`Referer: ${ref}`);
 
     const alias = event.queryStringParameters?.alias;
     if (!alias) throw new Error('Missing alias');

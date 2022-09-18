@@ -5,6 +5,7 @@
 .vscode
 context.json
 event.json
+headers.json
 *.log
 todo.md
 node_modules

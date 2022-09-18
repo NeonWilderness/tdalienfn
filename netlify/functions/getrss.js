@@ -24,6 +24,7 @@ exports.handler = async (event, context) => {
   };
 
   try {
+    console.log('headers: ', JSON.stringify(event.headers));
     const ref = event.headers.referrer || 'none';
     console.log(`Referrer: ${ref}`);
 
